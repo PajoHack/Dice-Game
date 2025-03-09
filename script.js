@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+const resetButton = document.getElementById("reset-btn");
 
 document.addEventListener("DOMContentLoaded", function () {
     const rollButton = document.getElementById("roll-btn");
@@ -41,6 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
         
     }
 
+    function resetGame() {
+        playerScore = 0;
+        computerScore = 0;
+        document.getElementById("player-score").textContent = playerScore;
+        document.getElementById("computer-score").textContent = computerScore;
+        document.getElementById("result").textContent = "Who will win? Roll the dice!";
+    }
+
     // Attach event listener
     rollButton.addEventListener("click", playGame);
+    resetButton.addEventListener("click", resetGame);
 });
