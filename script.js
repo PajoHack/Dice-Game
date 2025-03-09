@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
     const rollButton = document.getElementById("roll-btn");
     const playerDice = document.getElementById("player-dice");
@@ -25,12 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Determine the winner
         if (playerRoll > computerRoll) {
+            playerScore++; // Increase player score
+            document.getElementById("player-score").textContent = playerScore;
             resultText.textContent = "🎉 You Win!";
         } else if (playerRoll < computerRoll) {
+            computerScore++; // Increase computer score
+            document.getElementById("computer-score").textContent = computerScore;
             resultText.textContent = "💀 Computer Wins!";
         } else {
             resultText.textContent = "🤝 It's a Draw!";
         }
+        
     }
 
     // Attach event listener
